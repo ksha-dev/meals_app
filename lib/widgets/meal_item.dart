@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/widgets/meal_item_trait.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-import 'package:meals_app/models/meal.dart';
+import '/models/meal.dart';
+import '/widgets/meal_item_trait.dart';
 
 class MealItem extends StatelessWidget {
   const MealItem({super.key, required this.meal, required this.onSelectMeal});
@@ -33,7 +33,7 @@ class MealItem extends StatelessWidget {
                   color: Colors.black54,
                   child: Column(
                     children: [
-                      const Text('Title', maxLines: 2, textAlign: TextAlign.center, softWrap: true, overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)),
+                      Text(meal.title, maxLines: 2, textAlign: TextAlign.center, softWrap: true, overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)),
                       const SizedBox(height: 12),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
