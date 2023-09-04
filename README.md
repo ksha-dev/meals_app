@@ -18,6 +18,7 @@ samples, guidance on mobile development, and a full API reference.
 Outcomes of the project
 
 - Filtering
+- Favourites
 - Marking favourites
 - Navigation Bar
 - Navigation
@@ -25,3 +26,7 @@ Outcomes of the project
 - Drawer
 - WillPopScope
 - Passing Funtion Pointers
+- RiverPod
+- Providers
+- ConsumerWidget
+- ConsumerStateWidget
