@@ -19,15 +19,19 @@ class MealDetailsScreen extends ConsumerWidget {
           onPressed: () {
             final bool wasAdded = ref.read(favouriteProvider.notifier).toggleFavouriteMealStatus(meal);
             ScaffoldMessenger.of(context).clearSnackBars();
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${meal.title} has been ${wasAdded ? 'added' : 'removed'} from your favourites list')));
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${meal.title} has been ${wasAdded ? 'added to' : 'removed from'} your favourites list')));
           },
-          icon: Icon(isFavourite ? Icons.star : Icons.star_border),
+          icon: AnimatedSwitcher(
+            duration: const Duration(milliseconds: 500),
+            child: Icon(isFavourite ? Icons.star : Icons.star_border, key: ValueKey(isFavourite)),
+            transitionBuilder: (child, animation) => RotationTransition(turns: Tween(begin: 0.6, end: 1.0).animate(animation), child: child),
+          ),
         )
       ]),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.network(meal.imageUrl, width: double.infinity, fit: BoxFit.cover),
+            Hero(tag: meal.id, child: Image.network(meal.imageUrl, width: double.infinity, fit: BoxFit.cover)),
             const SizedBox(height: 16),
             Text('Ingridients', style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.primary, fontWeight: FontWeight.bold)),
             const SizedBox(height: 16),

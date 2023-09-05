@@ -23,7 +23,10 @@ class MealItem extends StatelessWidget {
         onTap: () => onSelectMeal(meal),
         child: Stack(
           children: [
-            FadeInImage(placeholder: MemoryImage(kTransparentImage), image: NetworkImage(meal.imageUrl), fit: BoxFit.cover, height: 200, width: double.infinity),
+            Hero(
+              tag: meal.id,
+              child: FadeInImage(placeholder: MemoryImage(kTransparentImage), image: NetworkImage(meal.imageUrl), fit: BoxFit.cover, height: 200, width: double.infinity),
+            ),
             Positioned(
                 bottom: 0,
                 left: 0,
@@ -33,7 +36,7 @@ class MealItem extends StatelessWidget {
                   color: Colors.black54,
                   child: Column(
                     children: [
-                      Text(meal.title, maxLines: 2, textAlign: TextAlign.center, softWrap: true, overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)),
+                      Hero(tag: meal.title, child: Text(meal.title, maxLines: 2, textAlign: TextAlign.center, softWrap: true, overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white))),
                       const SizedBox(height: 12),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

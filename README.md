@@ -30,3 +30,10 @@ Outcomes of the project
 - Providers
 - ConsumerWidget
 - ConsumerStateWidget
+- Explicit Animations
+- Implicit Animations
+- Animation Controllers
+- Positioned Widget
+- Tween
+- Transition Widgets
+- Animated Switcher

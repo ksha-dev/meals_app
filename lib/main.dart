@@ -6,7 +6,7 @@ import '/screens/tabs_screen.dart';
 
 final theme = ThemeData(
   useMaterial3: true,
-  colorScheme: ColorScheme.fromSeed(seedColor: Colors.red, brightness: Brightness.dark),
+  colorScheme: ColorScheme.fromSeed(seedColor: Colors.green, brightness: Brightness.dark),
   textTheme: GoogleFonts.notoSansAdlamTextTheme(),
 );
 
